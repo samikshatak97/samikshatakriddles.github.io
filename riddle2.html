@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riddle 2</title>
+<style>
+body{font-family:Arial;text-align:center;background:linear-gradient(45deg,#f6d365,#fda085);padding:40px;}
+.box{background:white;padding:25px;border-radius:15px;}
+input,button{padding:10px;margin:10px;}
+.confetti{position:fixed;width:10px;height:10px;top:-10px;animation:fall 3s linear forwards;}
+@keyframes fall{to{transform:translateY(100vh) rotate(360deg);}}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Riddle 2</h2>
+<p>What has hands but cannot clap?</p>
+<input id="ans"><br>
+<button onclick="check()">Submit</button>
+</div>
+<script>
+function confetti(){for(let i=0;i<50;i++){let c=document.createElement("div");c.className="confetti";c.style.left=Math.random()*100+"vw";c.style.background=`hsl(${Math.random()*360},100%,50%)`;document.body.appendChild(c);setTimeout(()=>c.remove(),3000);}}
+function check(){let a=document.getElementById("ans").value.toLowerCase();if(a==="clock"){confetti();setTimeout(()=>location.href="riddle3.html",1200);}else alert("Wrong answer!");}
+</script>
+</body>
+</html>
