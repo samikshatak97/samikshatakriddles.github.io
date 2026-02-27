@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riddle 5</title>
+<style>
+body{text-align:center;font-family:Arial;background:linear-gradient(45deg,#a1c4fd,#c2e9fb);padding:40px;}
+.box{background:#fff;padding:25px;border-radius:15px;}
+input,button{padding:10px;margin:10px;}
+.confetti{position:fixed;width:10px;height:10px;top:-10px;animation:fall 3s linear forwards;}
+@keyframes fall{to{transform:translateY(100vh) rotate(360deg);}}
+</style></head>
+<body>
+<div class="box">
+<h2>Riddle 5</h2>
+<p>What goes up but never comes down?</p>
+<input id="ans"><br><button onclick="check()">Submit</button>
+</div>
+<script>
+function confetti(){for(let i=0;i<50;i++){let c=document.createElement("div");c.className="confetti";c.style.left=Math.random()*100+"vw";c.style.background=`hsl(${Math.random()*360},100%,50%)`;document.body.appendChild(c);setTimeout(()=>c.remove(),3000);}}
+function check(){if(ans.value.toLowerCase()==="age"){confetti();setTimeout(()=>location.href="riddle6.html",1200);}else alert("Wrong answer!");}
+</script>
+</body></html>
